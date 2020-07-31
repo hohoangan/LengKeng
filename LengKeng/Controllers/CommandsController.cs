@@ -27,6 +27,13 @@ namespace LengKeng.Controllers
             _context = context;
         }
 
+        [HttpGet("test")]
+        public ActionResult<IEnumerable<Student>> test()
+        {
+            var students = _context.Students;
+            return Ok(students);
+        }
+
         [HttpGet("students")]
         public ActionResult<IEnumerable<Student>> GetAllStudents()
         {
